@@ -16,6 +16,8 @@ const SectionsProvider = ({ children }) => {
     }
   });
 
+  const [foundEvents, setFoundEvents] = useState();
+
   const logout = () => {
     localStorage.clear();
     setIsAuth(false);
@@ -31,6 +33,8 @@ const SectionsProvider = ({ children }) => {
         isAuth,
         logout,
         setIsAuth,
+        foundEvents,
+        setFoundEvents,
       }}
     >
       {children}

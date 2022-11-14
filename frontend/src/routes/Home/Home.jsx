@@ -1,23 +1,28 @@
 import React, { useContext, useState, useRef } from "react";
 import axiosConfig from "../../util/axiosConfig";
+import { SectionsContext } from "../../context/sectionsContext";
 
 export default function Home() {
+  const { foundEvents, setFoundEvents } = useContext(SectionsContext);
   const formElement = useRef(null);
   const locationElement = useRef(null);
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    const data = { location: locationElement.current.value };
+    const location = locationElement.current.value;
     try {
-      const axiosResp = await axiosConfig.get("/search/:location", data);
-      console.log(axiosResp);
+      const axiosResp = await axiosConfig.get(`/search/${location}`);
+      setFoundEvents(axiosResp.data);
+      console.log(foundEvents);
     } catch (error) {}
   };
+
   return (
     <div className="Home">
       <div>
         <h1>Veranstaltungen in deiner Nähe</h1>
         <p>Wo bist du gerade?</p>
-        <form ref={formElement} method="get" onSubmit={submitHandler}>
+        <form ref={formElement} method="" onSubmit={submitHandler}>
           <input ref={locationElement} type="text" />
           <input type="submit" value="Los geht´s!" />
         </form>
