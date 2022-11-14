@@ -5,7 +5,6 @@ import Cookies from "js-cookie";
 const SectionsContext = createContext();
 
 const SectionsProvider = ({ children }) => {
-  
   const [isAuth, setIsAuth] = useState(() => {
     const isLoggedCookie = Cookies.get("isLogged");
     if (!isLoggedCookie) return false;

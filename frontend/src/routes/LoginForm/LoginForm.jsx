@@ -51,19 +51,14 @@ function LoginForm() {
       {/* {isAuth ? (
         <Navigate to="/profile" replace={true} />
       ) : ( */}
-        <form ref={formEl} method="post" onSubmit={submitHandler}>
-          <h2>Login</h2>
-          <label htmlFor="username"> Nutzername:</label>
-          <input type="text" name="username" id="username" ref={usernameEL} />
-          <label htmlFor="password">Passwort:</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            ref={passwordEl}
-          />
-          <input type="submit" value="einloggen" />
-        </form>
+      <form ref={formEl} method="post" onSubmit={submitHandler}>
+        <h2>Login</h2>
+        <label htmlFor="username"> Nutzername:</label>
+        <input type="text" name="username" id="username" ref={usernameEL} />
+        <label htmlFor="password">Passwort:</label>
+        <input type="password" name="password" id="password" ref={passwordEl} />
+        <input type="submit" value="einloggen" />
+      </form>
       {/* )} */}
 
       {error && <p>Da ist etwas schief gelaufen: {error}</p>}
