@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import axiosConfig from "../../util/axiosConfig";
 import { SectionsContext } from "../../context/sectionsContext";
 
@@ -13,7 +13,7 @@ export default function Home() {
     try {
       const axiosResp = await axiosConfig.get(`/search/${location}`);
       setFoundEvents(axiosResp.data);
-      console.log(foundEvents);
+      console.log(foundEvents) + 1;
     } catch (error) {}
   };
 
