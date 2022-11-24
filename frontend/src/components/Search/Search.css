@@ -5,8 +5,8 @@
 
 .Search > div {
   width: 80%;
-  min-width: 400px;
-  max-width: 800px;
+  min-width: 40vw;
+  max-width: 600px;
   background-color: var(--beige-transparent-color);
   padding: 1rem;
   display: flex;
@@ -67,4 +67,13 @@
 .Search form input:last-child:hover {
   background-color: var(--dark-green-color);
   font-weight: bolder;
+}
+
+@media screen and (max-width: 500px) {
+  .Search > div > h1 {
+    font-size: 2rem;
+  }
+  .Search > div > p {
+    font-size: 1.5rem;
+  }
 }

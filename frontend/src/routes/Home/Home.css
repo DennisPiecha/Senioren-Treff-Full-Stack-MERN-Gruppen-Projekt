@@ -1,1 +1,28 @@
+.Home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
+#create {
+  width: 80%;
+  min-width: 40vw;
+  max-width: 600px;
+  background-color: var(--beige-transparent-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1.5rem;
+  color: var(--dark-green-color);
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 4rem;
+}
+
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
